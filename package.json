@@ -1,0 +1,19 @@
+{
+  "name": "bangla-shikkha",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w @bangla-shikkha/server\" \"npm run dev -w @bangla-shikkha/web\"",
+    "dev:web": "npm run dev -w @bangla-shikkha/web",
+    "dev:server": "npm run dev -w @bangla-shikkha/server",
+    "build": "npm run build -w @bangla-shikkha/shared && npm run build -w @bangla-shikkha/server && npm run build -w @bangla-shikkha/web",
+    "seed": "npm run seed -w @bangla-shikkha/server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
